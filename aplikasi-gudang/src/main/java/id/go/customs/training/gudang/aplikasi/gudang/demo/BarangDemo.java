@@ -41,6 +41,7 @@ public class BarangDemo {
         System.out.println("ID Barang b1 : "+b1.getId());
         System.out.println("Kode Barang b1 : "+b1.getKode());
         System.out.println("Nama Barang b1 : "+b1.getNama());
+        System.out.println("Keterangan b1 : "+b1.getKeterangan());
         System.out.println("Jumlah Barang : "+b1.getJumlahBarang());
 
         System.out.println("ID Barang b2 : "+b2.getId());
