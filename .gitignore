@@ -1,0 +1,47 @@
+logs
+
+# IntelliJ IDEA
+*.iml
+.idea
+
+# Eclipse Setting
+/.metadata
+/Servers
+.settings
+.project
+.classpath
+.buildpath
+RemoteSystemsTempFiles
+bin
+org.eclipse.jdt.core.prefs
+
+# Maven
+target
+
+# Netbeans Ignore
+nbproject
+build
+dist
+private
+
+# node.js / npm
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+pids
+logs
+results
+node_modules
+npm-debug.log
+
+# Yeoman
+.tmp
+dist
+.sass-cache
+bower_components
+static
