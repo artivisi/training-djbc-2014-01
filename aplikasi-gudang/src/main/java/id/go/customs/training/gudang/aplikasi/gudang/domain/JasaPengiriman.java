@@ -11,50 +11,51 @@ package id.go.customs.training.gudang.aplikasi.gudang.domain;
  * @author CEISA3
  */
 public class JasaPengiriman {
-    private Integer Id;
-    private String KodeJasaPengiriman;
-    private String NamaJasaPengiriman;
-    private String TipePengiriman;
-    private String Keterangan;
+    private static Integer jumlahJasaPengiriman = 0;
+    
+    private String kodeJasaPengiriman;
+    private String namaJasaPengiriman;
+    private String tipePengiriman;
+    private String keterangan;
 
-    public Integer getId() {
-        return Id;
+    public static Integer getJumlahJasaPengiriman() {
+        return jumlahJasaPengiriman;
     }
 
-    public void setId(Integer Id) {
-        this.Id = Id;
+    public void tambahJasaPengiriman(){
+        jumlahJasaPengiriman = jumlahJasaPengiriman+1;
     }
-
+            
     public String getKodeJasaPengiriman() {
-        return KodeJasaPengiriman;
+        return kodeJasaPengiriman;
     }
 
-    public void setKodeJasaPengiriman(String KodeJasaPengiriman) {
-        this.KodeJasaPengiriman = KodeJasaPengiriman;
+    public void setKodeJasaPengiriman(String kodeJasaPengiriman) {
+        this.kodeJasaPengiriman = kodeJasaPengiriman;
     }
 
     public String getNamaJasaPengiriman() {
-        return NamaJasaPengiriman;
+        return namaJasaPengiriman;
     }
 
-    public void setNamaJasaPengiriman(String NamaJasaPengiriman) {
-        this.NamaJasaPengiriman = NamaJasaPengiriman;
+    public void setNamaJasaPengiriman(String namaJasaPengiriman) {
+        this.namaJasaPengiriman = namaJasaPengiriman;
     }
     
     public String getTipePengiriman() {
-        return TipePengiriman;
+        return tipePengiriman;
     }
 
-    public void setTipePengiriman(String TipePengiriman) {
-        this.TipePengiriman = TipePengiriman;
+    public void setTipePengiriman(String tipePengiriman) {
+        this.tipePengiriman = tipePengiriman;
     }
 
     public String getKeterangan() {
-        return Keterangan;
+        return keterangan;
     }
 
-    public void setKeterangan(String Keterangan) {
-        this.Keterangan = Keterangan;
+    public void setKeterangan(String keterangan) {
+        this.keterangan = keterangan;
     }
     
     
