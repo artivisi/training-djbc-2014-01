@@ -55,3 +55,4 @@ public class Pegawai {
         this.divisi = divisi;
     }
 }
+
