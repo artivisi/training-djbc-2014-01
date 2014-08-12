@@ -45,12 +45,12 @@ public class BarangMasukDemo {
         System.out.println("ID Barang b1 : "+b1.getId());
         System.out.println("Kode Barang b1 : "+b1.getKode());
         System.out.println("Nama Barang b1 : "+b1.getNama());
-        System.out.println("Jumlah Barang : "+BarangMasuk.getTotalBarangMasuk());
+        System.out.println("Jumlah Barang : "+BarangMasuk.getJumlahBarangMasuk());
 
         System.out.println("ID Barang b2 : "+b2.getId());
         System.out.println("Kode Barang b2 : "+b2.getKode());
         System.out.println("Nama Barang b2 : "+b2.getNama());
-        System.out.println("Jumlah Barang : "+BarangMasuk.getTotalBarangMasuk());
+        System.out.println("Jumlah Barang : "+BarangMasuk.getJumlahBarangMasuk());
        
     }
     }

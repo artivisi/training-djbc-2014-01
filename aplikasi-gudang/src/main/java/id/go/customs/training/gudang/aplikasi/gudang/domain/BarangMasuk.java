@@ -20,8 +20,6 @@ public class BarangMasuk {
     private Integer jumlah;
     private String keterangan;
 
-
-
     public static Integer getJumlahBarangMasuk() {
         return jumlahBarangMasuk;
     }
