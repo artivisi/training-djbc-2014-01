@@ -22,7 +22,12 @@ create table t_gedung (
 -- Tabel Barang Masuk --
 
 -- Tabel Pegawai --
-
+create sequence pegawai_id_seq start with 1 increment by 1;
+create table t_pegawai (
+    id INT PRIMARY KEY,
+    nama VARCHAR2(255) NOT NULL,
+    divisi VARCHAR2(255)
+);
 -- Tabel Pemasok --
 
 -- Tabel RakGudang --

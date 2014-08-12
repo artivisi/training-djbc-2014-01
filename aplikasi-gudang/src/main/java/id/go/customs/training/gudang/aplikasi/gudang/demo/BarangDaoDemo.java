@@ -13,6 +13,13 @@ public class BarangDaoDemo {
         b1.setKeterangan("Handphone Android");
         
         bd.simpan(b1);
+        
+        Barang b2 = new Barang();
+        b2.setKode("H-002");
+        b2.setNama("Handphone");
+        b2.setKeterangan("Handphone Jadul");
+        
+        bd.simpan(b2);
     }
     
 }

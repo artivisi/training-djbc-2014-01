@@ -10,7 +10,7 @@ public class DemoAksesDb {
         // 1. Parameter Koneksi
         String databaseDriver = "oracle.jdbc.driver.OracleDriver";
         String databaseUrl = "jdbc:oracle:thin:@localhost:1521:XE";
-        String username = "SYS";
+        String username = "pelatihan";
         String password = "1";
         
         // 2. Connect ke database
@@ -18,7 +18,7 @@ public class DemoAksesDb {
         Connection koneksi = DriverManager.getConnection(databaseUrl, username, password);
         
         // 3. Jalankan SQL query
-        String sql = "select (2+3) from dual";
+        String sql = "select 2 from dual";
         PreparedStatement ps = koneksi.prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         
