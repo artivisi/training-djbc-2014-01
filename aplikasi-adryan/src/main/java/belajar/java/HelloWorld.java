@@ -4,16 +4,18 @@
  * and open the template in the editor.
  */
 
-package id.go.customs.training.adryan.aplikasi.adryan;
+package belajar.java;
+
+
 
 /**
  *
  * @author CEISA13
  */
-public class Hello {
+public class HelloWorld {
     public static void main(String[] args)
     {
-        System.out.println("Hello");
+        System.out.println("Hello World");
     }
     
 }
