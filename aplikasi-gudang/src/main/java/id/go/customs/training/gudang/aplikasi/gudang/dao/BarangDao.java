@@ -10,16 +10,15 @@ import java.util.logging.Logger;
 public class BarangDao {
     
     private static final String SQL_INSERT = "insert into t_barang (id, kode, nama, keterangan) "
-            + "values (?,?,?)";
+            + "values (barang_id_seq.nextval,?,?,?)";
     
     public void simpan(Barang b){
         try {
             Connection koneksi = DatabaseHelper.connect();
             PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
-            ps.setInt(1, b.getId());
-            ps.setString(2, b.getKode());
-            ps.setString(3, b.getNama());
-            ps.setString(4, b.getKeterangan());
+            ps.setString(1, b.getKode());
+            ps.setString(2, b.getNama());
+            ps.setString(3, b.getKeterangan());
             ps.executeUpdate();
             DatabaseHelper.disconnect(koneksi);
         } catch (SQLException ex) {
