@@ -11,11 +11,37 @@ package id.go.customs.training.gudang.aplikasi.gudang.domain;
  * @author CEISA22
  */
 public class RakGudang {
+    private static Integer TotalBarang;
     
     private Integer id;
     private String namarak;
     private String norak;
+    private Integer jumlahbarang;
     private String keterangan;
+    
+    
+    
+    public void Totalbarang(){
+    TotalBarang = jumlahbarang++;
+    }
+
+    public static Integer getTotalBarang() {
+        return TotalBarang;
+    }
+
+    public static void setTotalBarang(Integer TotalBarang) {
+        RakGudang.TotalBarang = TotalBarang;
+    }
+
+    
+    
+    public Integer getJumlahbarang() {
+        return jumlahbarang;
+    }
+
+    public void setJumlahbarang(Integer jumlahbarang) {
+        this.jumlahbarang = jumlahbarang;
+    }
 
     public Integer getId() {
         return id;
