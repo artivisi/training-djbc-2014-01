@@ -22,21 +22,30 @@ public class RakGudangDemo {
     r1.setNamarak("Obat-obatan");
     r1.setNorak("001A");
     r1.setKeterangan("Semua Jenis Obat-obatan");
+    r1.setJumlahbarang(20);
     
     r2.setId(2);
     r2.setNamarak("Makanan Ringan");
     r2.setNorak("001B");
     r2.setKeterangan("Semua Jenis makanan ringan");
+    r2.setJumlahbarang(10);
     
-    System.out.println("ID barang r1 ="+r1.getId());
-    System.out.println("Nama Rak barang r1 ="+r1.getNamarak());
-    System.out.println("no Rakbarang r1 ="+r1.getNorak());
-    System.out.println("Keterangan barang r1 ="+r1.getKeterangan());
+    System.out.println("ID barang r1            ="+r1.getId());
+    System.out.println("Nama Rak barang r1      ="+r1.getNamarak());
+    System.out.println("no Rakbarang r1         ="+r1.getNorak());
+    System.out.println("Keterangan barang r1    ="+r1.getKeterangan());
+    System.out.println("Jumlah barang r1        ="+r1.getJumlahbarang());
     
-    System.out.println("ID barang r2 ="+r2.getId());
-    System.out.println("Nama Rak barang r2 ="+r2.getNamarak());
-    System.out.println("no Rakbarang r2 ="+r2.getNorak());
-    System.out.println("Keterangan barang r2 ="+r2.getKeterangan());
+    System.out.println("ID barang r2            ="+r2.getId());
+    System.out.println("Nama Rak barang r2      ="+r2.getNamarak());
+    System.out.println("no Rakbarang r2         ="+r2.getNorak());
+    System.out.println("Keterangan barang r2    ="+r2.getKeterangan());
+    System.out.println("Jumlah barang r2        ="+r2.getJumlahbarang());
+    
+    
+    System.out.println("Total Jumlah barang r2  ="+RakGudang.getTotalBarang());
+    
+    
     }
     
     
