@@ -18,3 +18,12 @@ create table t_barang (
 
 -- Tabel Transport --
 
+-- Tabel Vendor --
+create sequence vendor_id_seq start with 1 increment by 1;
+create table t_vendor (
+id INT PRIMARY KEY,
+nama VARCHAR2 (255),
+alamat VARCHAR2 (255),
+produk VARCHAR2 (255),
+CONSTRAINT nama_unique UNIQUE (nama)
+);

@@ -17,7 +17,19 @@ public class Vendor {
     private String nama;
     private String alamat;
     private String produk;
+    private Integer jumlah = 0;
 
+    public Integer getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(Integer jumlah) {
+        this.jumlah = jumlah;
+        barangDatang = barangDatang + jumlah;
+    }
+    
+
+    
     public static Integer getBarangDatang() {
     return barangDatang;}
     

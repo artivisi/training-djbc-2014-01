@@ -9,8 +9,8 @@ public class DemoAksesDb {
     public static void main(String[] args) throws Exception {
         // 1. Parameter Koneksi
         String databaseDriver = "oracle.jdbc.driver.OracleDriver";
-        String databaseUrl = "jdbc:oracle:thin:@localhost:1521:XE";
-        String username = "SYS";
+        String databaseUrl = "jdbc:oracle:thin:@localhost:1523:XE";
+        String username = "pelatihan";
         String password = "1";
         
         // 2. Connect ke database

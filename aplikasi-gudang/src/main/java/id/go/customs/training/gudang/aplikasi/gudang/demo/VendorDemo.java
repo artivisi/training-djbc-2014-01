@@ -26,26 +26,30 @@ public class VendorDemo {
         v1.setNama("Toshiba");
         v1.setAlamat("Japan");
         v1.setProduk("TV");
-        v1.total();
+        v1.setJumlah(10);
         
         v2.setId(002);
         v2.setNama("Samsung");
         v2.setAlamat("South Korea");
         v2.setProduk("Tablet");
-        v2.total();
-          v2.total();
+        v2.setJumlah(5);
+        
         
         System.out.println("Id Vendor :" +v1.getId());
         System.out.println("Nama Vendor :" +v1.getNama());
         System.out.println("Alamat Vendor :" +v1.getAlamat());
         System.out.println("Produk :" +v1.getProduk());
-        System.out.println("Total barang :" +v1.getBarangDatang());
+        System.out.println("Jumlah Barang :" +v1.getJumlah());
+        
         
         
         System.out.println("Id Vendor :" +v2.getId());
         System.out.println("Nama Vendor :" +v2.getNama());
         System.out.println("Alamat Vendor :" +v2.getAlamat());
         System.out.println("Produk :" +v2.getProduk());
+        System.out.println("Jumlah Barang :" +v2.getJumlah());
+        
+        System.out.println("Total barang :" +v1.getBarangDatang());
         
     }
     
