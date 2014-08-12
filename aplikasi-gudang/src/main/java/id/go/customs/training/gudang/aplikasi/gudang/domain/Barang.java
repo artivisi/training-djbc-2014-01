@@ -32,8 +32,9 @@ public class Barang {
         // static variabel boleh dipakai dalam instance method
         jumlahBarang = jumlahBarang + 1;
     }
+
     public Integer getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Integer id) {
@@ -63,6 +64,7 @@ public class Barang {
     public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
     }
+    
     
     
 }
