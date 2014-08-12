@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  * @author Admin
  */
 public class GedungDao {
-    private static final String SQL_INSERT = "insert into Gedung (kode, nama, alamat, keterangan) "
+    private static final String SQL_INSERT = "insert into Gedung (id, kode, nama, alamat, keterangan) "
             + "values (gedung_id_seq.nextval,?,?,?,?)";
     
     public void simpan(Gedung g){
