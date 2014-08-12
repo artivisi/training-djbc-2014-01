@@ -19,6 +19,7 @@ public class BarangMasukDemo {
         
         BarangMasuk b1; // deklarasi variabel
         b1 = new BarangMasuk();  // inisialisasi variabel
+       
         b1.tambahBarang();
         
         BarangMasuk b2 = new BarangMasuk(); // deklarasi + inisialisasi
