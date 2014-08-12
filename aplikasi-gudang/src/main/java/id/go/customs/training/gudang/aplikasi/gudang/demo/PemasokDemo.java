@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package id.go.customs.training.gudang.aplikasi.gudang.kontak;
+package id.go.customs.training.gudang.aplikasi.gudang.demo;
 
 /**
  *
  * @author Admin
  */
-public class TabelDataKontak {
+public class PemasokDemo {
     
 }
