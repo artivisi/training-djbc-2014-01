@@ -19,12 +19,14 @@ public class JasaPengirimanDemo {
        
         JasaPengiriman jp = new JasaPengiriman();
         
+        jp.setId(1);
         jp.setKodeJasaPengiriman("JP001");
         jp.setNamaJasaPengiriman("JNE");
         jp.setTipePengiriman("Express");
         jp.setKeterangan("1-2hari");
         jp.tambahJasaPengiriman();
         
+        System.out.println("ID: "+jp.getId());
         System.out.println("Kode Jasa Pengiriman: "+jp.getKodeJasaPengiriman());
         System.out.println("Nama Jasa Pengiriman: "+jp.getNamaJasaPengiriman());
         System.out.println("Tipe Pengiriman: "+jp.getTipePengiriman());
