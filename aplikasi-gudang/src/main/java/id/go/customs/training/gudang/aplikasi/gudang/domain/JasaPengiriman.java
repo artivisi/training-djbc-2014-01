@@ -13,6 +13,7 @@ package id.go.customs.training.gudang.aplikasi.gudang.domain;
 public class JasaPengiriman {
     private static Integer jumlahJasaPengiriman = 0;
     
+    private Integer id;
     private String kodeJasaPengiriman;
     private String namaJasaPengiriman;
     private String tipePengiriman;
@@ -21,11 +22,19 @@ public class JasaPengiriman {
     public static Integer getJumlahJasaPengiriman() {
         return jumlahJasaPengiriman;
     }
-
+    
     public void tambahJasaPengiriman(){
         jumlahJasaPengiriman = jumlahJasaPengiriman+1;
     }
-            
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
     public String getKodeJasaPengiriman() {
         return kodeJasaPengiriman;
     }
