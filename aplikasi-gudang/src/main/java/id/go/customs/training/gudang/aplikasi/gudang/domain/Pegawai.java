@@ -8,45 +8,35 @@ package id.go.customs.training.gudang.aplikasi.gudang.domain;
 
 /**
  *
- * @author endy
+ * @author CEISA13
  */
-public class Barang {
-    // class variable -> static
-    private static Integer jumlahBarang = 0;
+public class Pegawai {
+     // class variable -> static
+    private static Integer jumlahPegawai = 0;
     
     
     // instance variable
     private Integer id;
-    private String kode;
     private String nama;
-    private String keterangan;
+    private String divisi;
     
     // static method
-    public static Integer getJumlahBarang(){
+    public static Integer getJumlahPegawai(){
         // id = 100; // instance variabel tidak bisa dipakai dalam static method
-        return jumlahBarang;
+        return jumlahPegawai;
     }
     
     // instance method
-    public void tambahBarang(){
+    public void tambahPegawai(){
         // static variabel boleh dipakai dalam instance method
-        jumlahBarang = jumlahBarang + 1;
+        jumlahPegawai = jumlahPegawai + 1;
     }
-
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getKode() {
-        return kode;
-    }
-
-    public void setKode(String kode) {
-        this.kode = kode;
     }
 
     public String getNama() {
@@ -57,14 +47,11 @@ public class Barang {
         this.nama = nama;
     }
 
-    public String getKeterangan() {
-        return keterangan;
+    public String getDivisi() {
+        return divisi;
     }
 
-    public void setKeterangan(String keterangan) {
-        this.keterangan = keterangan;
+    public void setDivisi(String divisi) {
+        this.divisi = divisi;
     }
-    
-    
-    
 }
