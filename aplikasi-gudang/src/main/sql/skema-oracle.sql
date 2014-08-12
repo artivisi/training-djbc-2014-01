@@ -1,5 +1,5 @@
 -- Tabel Barang --
-
+create sequence barang_id_seq start with 1 increment by 1;
 create table t_barang (
     id INT PRIMARY KEY,
     kode VARCHAR2(10) NOT NULL,
