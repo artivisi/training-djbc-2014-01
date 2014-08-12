@@ -19,6 +19,8 @@ public class GedungDaoDemo {
         Gedung newGedung = new Gedung();
         newGedung.setKode("G0003");
         newGedung.setNama("Gedung A");
+        newGedung.setAlamat("Jl. Ahmad Yani");
+        newGedung.setKeterangan("-");
         gedungDao.simpan(newGedung);
     }
 }
