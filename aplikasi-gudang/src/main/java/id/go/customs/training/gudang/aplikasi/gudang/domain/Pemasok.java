@@ -11,12 +11,18 @@ package id.go.customs.training.gudang.aplikasi.gudang.domain;
  * @author Admin
  */
 public class Pemasok {
+    private static final  Integer jumlahPemasok = 0;
       
     private String kodePemasok;
     private String namaPemasok;
     private String telepon;
     private String alamat;
 
+ public static Integer getjumlahPemasok(){
+     return jumlahPemasok;
+ }
+ 
+ 
     public String getKodePemasok() {
         return kodePemasok;
     }
