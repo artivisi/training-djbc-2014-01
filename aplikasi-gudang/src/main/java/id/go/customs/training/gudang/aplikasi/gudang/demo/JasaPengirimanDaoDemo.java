@@ -25,5 +25,23 @@ public class JasaPengirimanDaoDemo {
         jp1.setKeterangan("1-2hari");
         
         jpd.simpan(jp1);
+        System.out.println("ID yang baru saja diinsert = "+jp1.getId());
+        
+        /*JasaPengiriman jp2 = new JasaPengiriman();
+        
+        jp2.setKodeJasaPengiriman("JP021");
+        jp2.setNamaJasaPengiriman("FEDEX");
+        jp2.setTipePengiriman("Regular");
+        jp2.setKeterangan("7hari");
+        
+        jpd.simpan(jp2);
+        System.out.println("ID yang baru saja diinsert = "+jp2.getId());*/
+        
+        jp1.setNamaJasaPengiriman("POST");
+        jpd.simpan(jp1);
+        
+        
+        //jpd.delete(jp1);
+        
     }
 }
