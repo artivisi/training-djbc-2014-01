@@ -30,7 +30,7 @@ public class GedungDaoDemo {
         newGedung.setNama("Gedung Update");
         gedungDao.simpan(newGedung); // update
         
-        List<Gedung> hasilQuery = gedungDao.semuaBarang();
+        List<Gedung> hasilQuery = gedungDao.semuaGedung();
         System.out.println("Jumlah barang dalam database : "+hasilQuery.size());
         System.out.println("===== Hasil Query =======");
         
