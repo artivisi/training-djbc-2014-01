@@ -23,6 +23,7 @@ public class PemasokDaoDemo {
       p1.setAlamat("jk");
       
       bd.simpan(p1);
+      System.out.println("ID = "+p1.getId());
         
           }
     

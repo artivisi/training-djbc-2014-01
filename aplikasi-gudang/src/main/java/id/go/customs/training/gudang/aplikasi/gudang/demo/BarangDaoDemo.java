@@ -9,7 +9,7 @@ public class BarangDaoDemo {
         BarangDao bd = new BarangDao();
         
         Barang b1 = new Barang();
-        b1.setKode("H-001");
+        b1.setKode("H-007");
         b1.setNama("Handphone");
         b1.setKeterangan("Handphone Android");
         

@@ -23,7 +23,8 @@ public class PemasokDemo {
         Pemasok p2 = new  Pemasok();
         String nama = "PT ABADI";
         p1.tambahPemasok();
-                          
+          
+        p1.setId("");
          p1.setKodePemasok("P001");
          p1.setNamaPemasok("PT ABADI");
          p1.setTelepon("021545445");
