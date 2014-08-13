@@ -9,9 +9,9 @@ public class BarangDaoDemo {
         BarangDao bd = new BarangDao();
         
         Barang b1 = new Barang();
-        b1.setKode("H-001");
-        b1.setNama("Handphone");
-        b1.setKeterangan("Handphone Android");
+        b1.setKode("H-005");
+        b1.setNama("Keset");
+        b1.setKeterangan("Keset Terbang");
         
         bd.simpan(b1);
         
@@ -30,3 +30,4 @@ public class BarangDaoDemo {
     }
     
 }
+

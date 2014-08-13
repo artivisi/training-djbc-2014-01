@@ -8,24 +8,6 @@ create table t_barang (
     CONSTRAINT kode_unique UNIQUE (kode)
 );
 
--- Tabel Barang Masuk --
-
--- Tabel Pegawai --
-
--- Tabel Pemasok --
-
--- Tabel Transport --
-
--- Tabel Vendor --
-create sequence vendor_id_seq start with 1 increment by 1;
-create table t_vendor (
-id INT PRIMARY KEY,
-nama VARCHAR2 (255),
-alamat VARCHAR2 (255),
-produk VARCHAR2 (255),
-CONSTRAINT nama_unique UNIQUE (nama)
-);
-
 -- Tabel Gedung --
 create sequence gedung_id_seq start with 1 increment by 1;
 create table t_gedung (
@@ -37,9 +19,18 @@ create table t_gedung (
     CONSTRAINT kode_gedun_unique UNIQUE (kode)
 );
 
+-- Tabel Barang Masuk --
+
+-- Tabel Pegawai --
+create sequence pegawai_id_seq start with 1 increment by 1;
+create table t_pegawai (
+    id INT PRIMARY KEY,
+    nama VARCHAR2(255) NOT NULL,
+    divisi VARCHAR2(255)
+);
+-- Tabel Pemasok --
 
 -- Tabel RakGudang --
-
 create sequence rakgudang_id_seq start with 1 increment by 1;
 create table rakgudang (
     id INT PRIMARY KEY,
@@ -48,3 +39,15 @@ create table rakgudang (
     keterangan VARCHAR2(255),
    CONSTRAINT kode_norak_unique UNIQUE (norak)
 );
+-- Tabel Vendor --
+create sequence vendor_id_seq start with 1 increment by 1;
+create table t_vendor (
+id INT PRIMARY KEY,
+nama VARCHAR2 (255),
+alamat VARCHAR2 (255),
+produk VARCHAR2 (255),
+CONSTRAINT nama_unique UNIQUE (nama)
+);
+
+-- Tabel Transport --
+
