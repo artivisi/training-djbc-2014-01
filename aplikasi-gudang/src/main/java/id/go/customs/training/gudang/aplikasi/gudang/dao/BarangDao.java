@@ -20,6 +20,7 @@ public class BarangDao {
             + "keterangan = ? "
             + "where id = ?";
     private static final String SQL_DELETE_BY_ID = "delete from t_barang where id = ?";
+    private static final String SQL_SELECT_BY_ID = "select * from t_barang where id = ?";
     private static final String SQL_SELECT_ALL = "select * from t_barang order by kode";
     private static final String SQL_SELECT_GENERATED_ID = "select barang_id_seq.currval from dual";
     
@@ -106,6 +107,36 @@ public class BarangDao {
         } catch (SQLException ex) {
             Logger.getLogger(BarangDao.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public Barang cariById(Integer id){
+        if(id == null){
+            return null;
+        }
+        
+        try {
+            Connection koneksi = DatabaseHelper.connect();
+            PreparedStatement ps = koneksi.prepareStatement(SQL_SELECT_BY_ID);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            
+            if(!rs.next()){
+                return null;
+            }
+
+            Barang b = new Barang();
+            b.setId(rs.getInt("id"));
+            b.setKode(rs.getString("kode"));
+            b.setNama(rs.getString("nama"));
+            b.setKeterangan(rs.getString("keterangan"));
+            
+            DatabaseHelper.disconnect(koneksi);
+            
+            return b;
+        } catch (SQLException ex) {
+            Logger.getLogger(BarangDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
 
 }
