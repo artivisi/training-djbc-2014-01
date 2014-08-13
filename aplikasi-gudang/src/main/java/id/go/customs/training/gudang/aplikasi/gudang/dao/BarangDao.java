@@ -20,6 +20,7 @@ public class BarangDao {
             + "keterangan = ? "
             + "where id = ?";
     private static final String SQL_SELECT_ALL = "select * from t_barang order by kode";
+    private static final String SQL_SELECT_GENERATED_ID = "select barang_id_seq.currval";
     
     public void simpan(Barang b){
         try {
@@ -42,7 +43,9 @@ public class BarangDao {
         ps.setString(3, b.getKeterangan());
         int recordBaru = ps.executeUpdate();
         if(recordBaru > 0){
-            ResultSet generatedKeys = ps.getGeneratedKeys();
+            ResultSet generatedKeys = koneksi
+                    .prepareStatement(SQL_SELECT_GENERATED_ID)
+                    .executeQuery();
             if(generatedKeys == null || !generatedKeys.next()){
                 System.out.println("Tidak berhasil generate ID");
                 return;
