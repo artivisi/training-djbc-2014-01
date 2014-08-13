@@ -85,7 +85,7 @@ public class GedungDao {
         ps.executeUpdate();
     }
     
-    public List<Gedung> semuaBarang(){
+    public List<Gedung> semuaGedung(){
         try {
             Connection koneksi = DatabaseHelper.connect();
             PreparedStatement ps = koneksi.prepareStatement(SQL_SELECT_ALL);
