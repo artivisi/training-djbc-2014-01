@@ -13,8 +13,11 @@ public class BarangDaoDemo {
         b1.setNama("Handphone");
         b1.setKeterangan("Handphone Android");
         
-        bd.simpan(b1);
+        bd.simpan(b1); // insert
+        System.out.println("ID yang baru saja diinsert = "+b1.getId());
         
+        b1.setNama("Smartphone");
+        bd.simpan(b1); // update
         
         List<Barang> hasilQuery = bd.semuaBarang();
         System.out.println("Jumlah barang dalam database : "+hasilQuery.size());
