@@ -6,6 +6,7 @@
 
 package id.go.customs.training.gudang.aplikasi.gudang.importer;
 
+import id.go.customs.training.gudang.aplikasi.gudang.domain.Pegawai;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,8 +26,34 @@ public class PegawaiImporter {
         try {
             reader = new BufferedReader(new FileReader(fileCsv));
             String data = reader.readLine();
+            
+            if(data == null){
+                System.out.println("File kosong");
+                return hasil;
+            }
+            
+            data = reader.readLine(); // skip satu baris, header tidak perlu diproses
+            Integer noBaris = 1;
+            
             while(data != null){
+                noBaris++;
                 System.out.println("Memproses data : "+data);
+                String[] baris = data.split(",");
+                
+                if(baris.length != 2){
+                    ImportError error = new ImportError();
+                    error.setKeterangan("Data harusnya ada 2 field, tapi ternyata ada "+baris.length+" field");
+                    error.setBaris(noBaris);
+                    error.setData(data);
+                    hasil.getGagalImport().add(error);
+                    data = reader.readLine();
+                    continue;
+                }
+                
+                Pegawai p = new Pegawai();
+                p.setNama(baris[0]);
+                p.setDivisi(baris[1]);
+                hasil.getSuksesImport().add(p);
                 data = reader.readLine();
             }   
         } catch (FileNotFoundException ex) {
