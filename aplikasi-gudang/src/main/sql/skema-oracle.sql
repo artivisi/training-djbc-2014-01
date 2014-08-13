@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+=======
 -- Tabel Barang --
 create sequence barang_id_seq start with 1 increment by 1;
 create table t_barang (
@@ -40,16 +41,16 @@ create table rakgudang (
     keterangan VARCHAR2(255),
    CONSTRAINT kode_norak_unique UNIQUE (norak)
 );
+-- Tabel Vendor --
+create sequence vendor_id_seq start with 1 increment by 1;
+create table t_vendor (
+id INT PRIMARY KEY,
+nama VARCHAR2 (255),
+alamat VARCHAR2 (255),
+produk VARCHAR2 (255),
+CONSTRAINT nama_unique UNIQUE (nama)
+);
 
 -- Tabel Transport --
 
--- Tabel JasaPengiriman --
-create sequence jasaPengiriman_id_seq start with 1 increment by 1;
-create table t_jasaPengiriman(
-    id INT PRIMARY KEY,
-    kodeJasaPengiriman VARCHAR2(5) NOT NULL,
-    namaJasaPengiriman VARCHAR2 (100) NOT NULL,
-    tipePengiriman VARCHAR2 (100),
-    keterangan VARCHAR2 (100),
-    CONSTRAINT kode_jasa_unique UNIQUE (kodeJasaPengiriman)
-);
+
