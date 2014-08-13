@@ -51,7 +51,7 @@ public class PegawaiDaoDemo {
         Pegawai px = pd.cariById(p2.getId());
         System.out.println("ID : "+px.getId());
         System.out.println("Nama : "+px.getNama());
-        System.out.println("Keterangan : "+px.getDivisi());
+        System.out.println("Divisi : "+px.getDivisi());
         
         //pd.hapus(px);
         
