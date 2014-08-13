@@ -3,6 +3,7 @@ package id.go.customs.training.gudang.aplikasi.gudang.importer;
 public class ImportError {
     private Integer baris;
     private String keterangan;
+    private String data;
 
     public Integer getBaris() {
         return baris;
@@ -10,6 +11,14 @@ public class ImportError {
 
     public void setBaris(Integer baris) {
         this.baris = baris;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getKeterangan() {
