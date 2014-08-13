@@ -20,7 +20,7 @@ public class BarangDao {
             + "keterangan = ? "
             + "where id = ?";
     private static final String SQL_SELECT_ALL = "select * from t_barang order by kode";
-    private static final String SQL_SELECT_GENERATED_ID = "select barang_id_seq.currval";
+    private static final String SQL_SELECT_GENERATED_ID = "select barang_id_seq.currval from dual";
     
     public void simpan(Barang b){
         try {
