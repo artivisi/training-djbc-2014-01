@@ -4,6 +4,7 @@
  */
 package id.go.customs.training.gudang.aplikasi.gudang.demo;
 
+import id.go.customs.training.gudang.aplikasi.gudang.dao.TransportDao;
 import id.go.customs.training.gudang.aplikasi.gudang.domain.Transport;
 
 /**
@@ -58,5 +59,9 @@ public class TransportDemo {
         t1.kurangKendaraan();
         System.out.println("Jumlah Kendaraan di Gudang : " + Transport.getJumlahKendaraan());
         System.out.println("===================================");
+        
+        //Simpan data
+        TransportDao td = new TransportDao();
+        td.Simpan(t1);
     }
 }
