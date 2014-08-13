@@ -13,7 +13,14 @@ create table t_barang (
 -- Tabel Pegawai --
 
 -- Tabel Pemasok --
-
+create sequence pemasok_id_seq start with 1 increment by 1;
+CREATE TABLE  "PEMASOK" 
+   (	"KDPEMASOK" NUMBER(5,0), 
+	"NMPEMASOK" CHAR(20), 
+	"TLP" NUMBER(10,0), 
+	"ALAMAT" CHAR(2)
+   )
+;
 -- Tabel RakGudang --
 
 -- Tabel Transport --

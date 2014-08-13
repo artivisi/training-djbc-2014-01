@@ -22,6 +22,7 @@ public class BarangDao {
             ps.executeUpdate();
             DatabaseHelper.disconnect(koneksi);
         } catch (SQLException ex) {
+            System.out.println("Terjadi error");
             Logger.getLogger(BarangDao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

@@ -7,11 +7,12 @@
 package id.go.customs.training.gudang.aplikasi.gudang.domain;
 
 /**
- *
+     *
  * @author Admin
  */
 public class Pemasok {
-    private static final  Integer jumlahPemasok = 0;
+    private static Integer jumlahPemasok = 0;
+    
       
     private String kodePemasok;
     private String namaPemasok;
@@ -21,8 +22,11 @@ public class Pemasok {
  public static Integer getjumlahPemasok(){
      return jumlahPemasok;
  }
- 
- 
+  public void tambahPemasok(){
+        jumlahPemasok = jumlahPemasok+1;
+    }
+    
+    
     public String getKodePemasok() {
         return kodePemasok;
     }
@@ -54,5 +58,6 @@ public class Pemasok {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-    
+
+   
 }

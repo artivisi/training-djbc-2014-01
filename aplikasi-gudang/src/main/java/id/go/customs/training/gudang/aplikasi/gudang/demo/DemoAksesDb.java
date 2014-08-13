@@ -10,7 +10,7 @@ public class DemoAksesDb {
         // 1. Parameter Koneksi
         String databaseDriver = "oracle.jdbc.driver.OracleDriver";
         String databaseUrl = "jdbc:oracle:thin:@localhost:1521:XE";
-        String username = "SYS";
+        String username = "pelatihan";
         String password = "1";
         
         // 2. Connect ke database
