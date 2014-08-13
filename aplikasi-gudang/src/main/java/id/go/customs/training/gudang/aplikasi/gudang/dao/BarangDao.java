@@ -37,13 +37,15 @@ public class BarangDao {
     }
 
     private void insert(Connection koneksi, Barang b) throws SQLException {
-        PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT, new String[]{"id"});
+        PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
         ps.setString(1, b.getKode());
         ps.setString(2, b.getNama());
         ps.setString(3, b.getKeterangan());
         int recordBaru = ps.executeUpdate();
         if(recordBaru > 0){
-            ResultSet generatedKeys = ps.getGeneratedKeys();
+            ResultSet generatedKeys = koneksi
+                    .prepareStatement(SQL_SELECT_GENERATED_ID)
+                    .executeQuery();
             if(generatedKeys == null || !generatedKeys.next()){
                 System.out.println("Tidak berhasil generate ID");
                 return;
