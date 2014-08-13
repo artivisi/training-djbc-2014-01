@@ -1,4 +1,3 @@
-
 package id.go.customs.training.gudang.aplikasi.gudang.demo;
 
 import id.go.customs.training.gudang.aplikasi.gudang.dao.BarangDao;
@@ -41,4 +40,5 @@ public class BarangDaoDemo {
         
         bd.hapus(bx);
     }
+    
 }
