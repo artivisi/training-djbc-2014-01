@@ -30,6 +30,8 @@ public class BarangDaoDemo {
             System.out.println("Keterangan : "+barang.getKeterangan());
             System.out.println("---------------------");
         }
+        
+        bd.hapus(b1);
     }
     
 }

@@ -19,6 +19,7 @@ public class BarangDao {
             + "nama = ?, "
             + "keterangan = ? "
             + "where id = ?";
+    private static final String SQL_DELETE_BY_ID = "delete from t_barang where id = ?";
     private static final String SQL_SELECT_ALL = "select * from t_barang order by kode";
     private static final String SQL_SELECT_GENERATED_ID = "select barang_id_seq.currval from dual";
     
@@ -89,6 +90,22 @@ public class BarangDao {
             Logger.getLogger(BarangDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    public void hapus(Barang b){
+        try {
+            if(b.getId() == null){
+                return;
+            }
+            
+            Connection koneksi = DatabaseHelper.connect();
+            PreparedStatement ps = koneksi.prepareStatement(SQL_DELETE_BY_ID);
+            ps.setInt(1, b.getId());
+            ps.executeUpdate();
+            DatabaseHelper.disconnect(koneksi);
+        } catch (SQLException ex) {
+            Logger.getLogger(BarangDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
