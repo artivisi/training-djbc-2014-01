@@ -32,13 +32,13 @@ public class BarangDaoDemo {
             System.out.println("---------------------");
         }
         
-        Barang bx = bd.cariById(b1.getId());
+        /*Barang bx = bd.cariById(b1.getId());
         System.out.println("ID : "+bx.getId());
         System.out.println("Kode : "+bx.getKode());
         System.out.println("Nama : "+bx.getNama());
         System.out.println("Keterangan : "+bx.getKeterangan());
         
-        bd.hapus(bx);
+        bd.hapus(bx);*/
     }
     
 }
