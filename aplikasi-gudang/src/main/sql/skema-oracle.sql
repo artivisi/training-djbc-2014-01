@@ -67,3 +67,15 @@ create table t_transport (
     plat VARCHAR2(50),
     supir VARCHAR2(50)
 );
+
+
+-- Tabel JasaPengiriman --
+create sequence jasaPengiriman_id_seq start with 1 increment by 1;
+create table t_jasaPengiriman(
+    id INT PRIMARY KEY,
+    kodeJasaPengiriman VARCHAR2(5) NOT NULL,
+    namaJasaPengiriman VARCHAR2 (100) NOT NULL,
+    tipePengiriman VARCHAR2 (100),
+    keterangan VARCHAR2 (100),
+    CONSTRAINT kode_jasa_unique UNIQUE (kodeJasaPengiriman)
+);
