@@ -23,6 +23,7 @@ nbproject
 build
 dist
 private
+nb-configuration.xml
 
 # node.js / npm
 lib-cov
