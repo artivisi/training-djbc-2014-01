@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="daftarBarang" var="x">
+                <c:forEach items="${daftarBarang}" var="x">
                 <tr>
                     <td>${x.kode}</td>
                     <td>${x.nama}</td>
