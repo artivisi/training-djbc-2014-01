@@ -20,6 +20,10 @@ public class HaloServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.getWriter().print(output);
         resp.getWriter().flush();
-    }
+    }    
     
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
 }
