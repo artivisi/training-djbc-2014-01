@@ -9,6 +9,8 @@
     <body>
         <h1>Daftar Barang</h1>
         
+        <a href="form">Tambah Data Baru</a>
+        
         <table border="1">
             <thead>
                 <tr>
