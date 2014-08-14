@@ -32,5 +32,19 @@ public class BarangFormServlet extends HttpServlet {
                 .forward(req, resp);
         
     }
-    
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Barang b = new Barang();
+        String id = req.getParameter("id");
+        if(id != null && !id.isEmpty()){
+            b.setId(Integer.parseInt(id));
+        }
+        b.setKode(req.getParameter("kode"));
+        b.setNama(req.getParameter("nama"));
+        b.setKeterangan(req.getParameter("keterangan"));
+        
+        bd.simpan(b);
+        resp.sendRedirect("/barang/list");
+    }
 }
