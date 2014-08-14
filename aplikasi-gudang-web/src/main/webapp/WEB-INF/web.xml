@@ -8,6 +8,14 @@
         <servlet-name>BarangListServlet</servlet-name>
         <servlet-class>id.go.customs.training.gudang.web.BarangListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BarangFormServlet</servlet-name>
+        <servlet-class>id.go.customs.training.gudang.web.BarangFormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GedungListServlet</servlet-name>
+        <servlet-class>id.go.customs.training.gudang.web.GedungListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HaloServlet</servlet-name>
         <url-pattern>/halo</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>BarangListServlet</servlet-name>
         <url-pattern>/barang/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BarangFormServlet</servlet-name>
+        <url-pattern>/barang/form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GedungListServlet</servlet-name>
+        <url-pattern>/gedung/list</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

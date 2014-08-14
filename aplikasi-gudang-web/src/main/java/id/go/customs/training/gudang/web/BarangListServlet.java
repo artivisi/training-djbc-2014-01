@@ -28,6 +28,7 @@ public class BarangListServlet extends HttpServlet {
         System.out.println("Menjalankan BarangListServlet");
         
         List<Barang> dataBarang = barangDao.semuaBarang();
+        System.out.println("Jumlah Record"+dataBarang.size());
         req.setAttribute("daftarBarang", dataBarang);
         
         req.getRequestDispatcher("/WEB-INF/templates/jsp/barang/list.jsp")

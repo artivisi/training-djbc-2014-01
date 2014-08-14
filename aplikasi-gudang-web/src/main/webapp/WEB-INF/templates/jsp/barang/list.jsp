@@ -9,6 +9,8 @@
     <body>
         <h1>Daftar Barang</h1>
         
+        <a href="form">Tambah Data Baru</a>
+        
         <table border="1">
             <thead>
                 <tr>
@@ -19,7 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="daftarBarang" var="x">
+                <c:forEach items="${daftarBarang}" var="x">
                 <tr>
                     <td>${x.kode}</td>
                     <td>${x.nama}</td>
