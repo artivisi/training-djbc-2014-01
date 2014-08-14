@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,15 +19,17 @@
                 </tr>
             </thead>
             <tbody>
+                <c:forEach items="daftarBarang" var="x">
                 <tr>
-                    <td>B-001</td>
-                    <td>Barang 001</td>
-                    <td>Barang No 001</td>
+                    <td>${x.kode}</td>
+                    <td>${x.nama}</td>
+                    <td>${x.keterangan}</td>
                     <td>
-                        <a href="form?id=">edit</a> | 
-                        <a href="hapus?id=">hapus</a>  
+                        <a href="form?id=${x.id}">edit</a> | 
+                        <a href="hapus?id=${x.id}">hapus</a>  
                     </td>
                 </tr>
+                </c:forEach>
             </tbody>
         </table>
 
