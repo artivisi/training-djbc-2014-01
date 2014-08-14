@@ -94,7 +94,7 @@ public class PemasokDao {
             ps = koneksi.prepareStatement(SQL_SELECT_ALL);
             ResultSet rs = ps.executeQuery();
             
-            List<Pemasok> hasil = new ArrayList<>();
+            List<Pemasok> hasil = new ArrayList<Pemasok>();
             while(rs.next()){
                 Pemasok b = new Pemasok();
                 b.setId(rs.getInt("id"));

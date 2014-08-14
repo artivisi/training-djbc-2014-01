@@ -74,7 +74,7 @@ public class BarangDao {
             PreparedStatement ps = koneksi.prepareStatement(SQL_SELECT_ALL);
             ResultSet rs = ps.executeQuery();
             
-            List<Barang> hasil = new ArrayList<>();
+            List<Barang> hasil = new ArrayList<Barang>();
             while(rs.next()){
                 Barang b = new Barang();
                 b.setId(rs.getInt("id"));

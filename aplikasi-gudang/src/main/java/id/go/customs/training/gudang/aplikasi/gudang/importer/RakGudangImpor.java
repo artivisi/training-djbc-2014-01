@@ -1,6 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 package id.go.customs.training.gudang.aplikasi.gudang.importer;
 
 import id.go.customs.training.gudang.aplikasi.gudang.domain.Barang;
+import id.go.customs.training.gudang.aplikasi.gudang.domain.RakGudang;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,10 +16,14 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BarangImporter {
-    public static HasilImportBarang importCsv(File fileCsv){
+/**
+ *
+ * @author CEISA22
+ */
+public class RakGudangImpor {
+      public static HasilImporRakGudang importCsv(File fileCsv){
         BufferedReader reader = null;
-        HasilImportBarang hasil = new HasilImportBarang();
+        HasilImporRakGudang hasil = new HasilImporRakGudang();
         try {
             reader = new BufferedReader(new FileReader(fileCsv));
             String data = reader.readLine();
@@ -40,18 +51,18 @@ public class BarangImporter {
                     continue;
                 }
                 
-                Barang b = new Barang();
-                b.setKode(baris[0]);
-                b.setNama(baris[1]);
+                RakGudang b = new RakGudang();
+                b.setNamarak(baris[0]);
+                b.setNorak(baris[1]);
                 b.setKeterangan(baris[2]);
                 hasil.getSuksesImport().add(b);
                 
                 data = reader.readLine();
             }   
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(BarangImporter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RakGudangImpor.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(BarangImporter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RakGudangImpor.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if(reader != null){
@@ -63,4 +74,5 @@ public class BarangImporter {
             return hasil;
         }
     }
+    
 }

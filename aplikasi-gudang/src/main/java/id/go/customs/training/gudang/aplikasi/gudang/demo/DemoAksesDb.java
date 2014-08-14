@@ -15,21 +15,24 @@ public class DemoAksesDb {
         
         // 2. Connect ke database
         Class.forName(databaseDriver);
-        try (Connection koneksi = DriverManager.getConnection(databaseUrl, username, password)) {
-            String sql = "select (2+3) from dual";
-            PreparedStatement ps = koneksi.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            // 4. Tampilkan hasilnya
-            if(!rs.next()){
-                System.out.println("Tidak ada record yang dihasilkan");
-                return;
-            }
-            // ambil kolom pertama dalam hasil query
-            Integer hasil = rs.getInt(1);
-            System.out.println("Hasil query = "+hasil);
+        Connection koneksi = DriverManager.getConnection(databaseUrl, username, password);
+        
+        // 3. Jalankan SQL query
+        String sql = "select (2+3) from dual";
+        PreparedStatement ps = koneksi.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        
+        // 4. Tampilkan hasilnya
+        if(!rs.next()){
+            System.out.println("Tidak ada record yang dihasilkan");
+            return;
         }
+        
+        // ambil kolom pertama dalam hasil query
+        Integer hasil = rs.getInt(1);
+        System.out.println("Hasil query = "+hasil);
+        
+        // 5. Disconnect
+        koneksi.close();
     }
 }
-
-

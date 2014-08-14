@@ -85,13 +85,13 @@ public class GedungDao {
         ps.executeUpdate();
     }
     
-    public List<Gedung> semuaBarang(){
+    public List<Gedung> semuaGedung(){
         try {
             Connection koneksi = DatabaseHelper.connect();
             PreparedStatement ps = koneksi.prepareStatement(SQL_SELECT_ALL);
             ResultSet rs = ps.executeQuery();
             
-            List<Gedung> hasil = new ArrayList<>();
+            List<Gedung> hasil = new ArrayList<Gedung>();
             while(rs.next()){
                 Gedung b = new Gedung();
                 b.setId(rs.getInt("id"));
