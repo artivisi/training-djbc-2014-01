@@ -14,7 +14,9 @@ public class HaloServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String output = "Halo Servlet";
+        String nama = req.getParameter("nama");
+        
+        String output = "Halo "+nama;
         resp.setContentType("text/html");
         resp.getWriter().print(output);
         resp.getWriter().flush();
