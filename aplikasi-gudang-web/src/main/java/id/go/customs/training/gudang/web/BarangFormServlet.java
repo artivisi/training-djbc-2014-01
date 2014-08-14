@@ -45,6 +45,6 @@ public class BarangFormServlet extends HttpServlet {
         b.setKeterangan(req.getParameter("keterangan"));
         
         bd.simpan(b);
-        resp.sendRedirect("/barang/list");
+        resp.sendRedirect("list");
     }
 }

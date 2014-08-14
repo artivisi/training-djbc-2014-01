@@ -13,8 +13,13 @@
         <servlet-class>id.go.customs.training.gudang.web.BarangFormServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>VendorListServlet</servlet-name>
+        <servlet-class>id.go.customs.training.gudang.web.VendorListServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>GedungListServlet</servlet-name>
         <servlet-class>id.go.customs.training.gudang.web.GedungListServlet</servlet-class>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>HaloServlet</servlet-name>
@@ -27,6 +32,10 @@
     <servlet-mapping>
         <servlet-name>BarangFormServlet</servlet-name>
         <url-pattern>/barang/form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VendorListServlet</servlet-name>
+        <url-pattern>/VendorListServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>GedungListServlet</servlet-name>
