@@ -6,6 +6,8 @@
 
 package id.go.customs.training.gudang.web;
 
+import id.go.customs.training.gudang.aplikasi.gudang.importer.BarangImporter;
+import id.go.customs.training.gudang.aplikasi.gudang.importer.HasilImportBarang;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -64,8 +66,12 @@ public class BarangUploadServlet extends HttpServlet {
                     System.out.println("Ukuran File : "+fileItem.getSize());
                     
                     String fileTujuan = lokasiLengkap + File.separator + fileItem.getName();
-                    fileItem.write(new File(fileTujuan));
+                    File tujuan = new File(fileTujuan);
+                    fileItem.write(tujuan);
                     System.out.println("Hasil upload ada di "+fileTujuan);
+                    
+                    HasilImportBarang hasil = BarangImporter.importCsv(tujuan);
+                    req.setAttribute("hasil", hasil);
                 }
             } catch (Exception ex) {
                 Logger.getLogger(BarangUploadServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -73,8 +79,9 @@ public class BarangUploadServlet extends HttpServlet {
             
         }
         
-        // selesai upload, arahkan user ke list barang
-        resp.sendRedirect("list");
+        // selesai upload, tampilkan hasil upload
+        req.getRequestDispatcher("/WEB-INF/templates/jsp/import.jsp")
+                .forward(req, resp);
     }
     
 }
