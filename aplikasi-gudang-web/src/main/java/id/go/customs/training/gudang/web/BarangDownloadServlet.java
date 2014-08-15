@@ -85,8 +85,8 @@ public class BarangDownloadServlet extends HttpServlet {
             resp.getWriter().print(",");
             resp.getWriter().print(barang.getKeterangan());
             resp.getWriter().print(",");
-            resp.getWriter().print(formatterTanggal.format(barang.getTanggalProduksi()));
-            resp.getWriter().print(",");
+            //resp.getWriter().print(formatterTanggal.format(barang.getTanggalProduksi()));
+            //resp.getWriter().print(",");
             resp.getWriter().println(barang.getHarga());
         }
         resp.getWriter().flush();

@@ -80,7 +80,7 @@ public class BarangUploadServlet extends HttpServlet {
         }
         
         // selesai upload, tampilkan hasil upload
-        req.getRequestDispatcher("/WEB-INF/templates/jsp/import.jsp")
+        req.getRequestDispatcher("/WEB-INF/templates/jsp/barang/import.jsp")
                 .forward(req, resp);
     }
     

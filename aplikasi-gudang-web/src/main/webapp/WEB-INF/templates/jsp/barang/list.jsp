@@ -10,10 +10,10 @@
         <h1>Daftar Barang</h1>
         
         <a href="form">Tambah Data Baru</a> | 
-        <a href="download?format=csv"> Download CSV |
-        <a href="download?format=json"> Download JSON |
-        <a href="download?format=pdf"> Download PDF |
-        <a href="download?format=xls"> Download XLS
+        <a href="download?format=csv"> Download CSV </a> |
+        <a href="download?format=json"> Download JSON </a> |
+        <a href="download?format=pdf"> Download PDF </a> |
+        <a href="download?format=xls"> Download XLS</a> 
         
         <table border="1">
             <thead>
