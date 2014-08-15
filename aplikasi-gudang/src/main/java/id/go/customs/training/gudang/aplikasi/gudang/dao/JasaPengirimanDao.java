@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author CEISA3
  */
-public class JasaPengirimanDao {
+    public class JasaPengirimanDao {
     private static final String SQL_INSERT = "insert into t_jasaPengiriman (id, kodeJasaPengiriman, namaJasaPengiriman, tipePengiriman, keterangan) "
             + "values (jasaPengiriman_id_seq.nextval,?,?,?,?)";
     private static final String SQL_UPDATE = "update t_jasaPengiriman set "
