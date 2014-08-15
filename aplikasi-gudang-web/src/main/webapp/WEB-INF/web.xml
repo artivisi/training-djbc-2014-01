@@ -24,6 +24,10 @@
         <servlet-name>GedungListServlet</servlet-name>
         <servlet-class>id.go.customs.training.gudang.web.GedungListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GedungFormServlet</servlet-name>
+        <servlet-class>id.go.customs.training.gudang.web.GedungFormServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HaloServlet</servlet-name>
         <url-pattern>/halo</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>GedungListServlet</servlet-name>
         <url-pattern>/gedung/list</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GedungFormServlet</servlet-name>
+        <url-pattern>/gedung/form</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
