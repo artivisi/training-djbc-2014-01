@@ -6,6 +6,9 @@
 
 package id.go.customs.training.gudang.aplikasi.gudang.domain;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 /**
  *
  * @author endy
@@ -20,6 +23,8 @@ public class Barang {
     private String kode;
     private String nama;
     private String keterangan;
+    private Date tanggalProduksi;
+    private BigDecimal harga;
     
     // static method
     public static Integer getJumlahBarang(){
@@ -64,7 +69,21 @@ public class Barang {
     public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
     }
-    
-    
+
+    public Date getTanggalProduksi() {
+        return tanggalProduksi;
+    }
+
+    public void setTanggalProduksi(Date tanggalProduksi) {
+        this.tanggalProduksi = tanggalProduksi;
+    }
+
+    public BigDecimal getHarga() {
+        return harga;
+    }
+
+    public void setHarga(BigDecimal harga) {
+        this.harga = harga;
+    }
     
 }
