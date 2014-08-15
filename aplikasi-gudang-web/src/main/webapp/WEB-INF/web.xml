@@ -17,6 +17,10 @@
         <servlet-class>id.go.customs.training.gudang.web.BarangUploadServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>BarangDownloadServlet</servlet-name>
+        <servlet-class>id.go.customs.training.gudang.web.BarangDownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>VendorListServlet</servlet-name>
         <servlet-class>id.go.customs.training.gudang.web.VendorListServlet</servlet-class>
     </servlet>
@@ -43,6 +47,10 @@
     <servlet-mapping>
         <servlet-name>BarangUploadServlet</servlet-name>
         <url-pattern>/barang/upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BarangDownloadServlet</servlet-name>
+        <url-pattern>/barang/download</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>VendorListServlet</servlet-name>
