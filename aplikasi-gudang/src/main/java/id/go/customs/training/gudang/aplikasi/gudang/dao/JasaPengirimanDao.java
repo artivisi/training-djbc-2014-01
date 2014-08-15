@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author CEISA3
  */
-public class JasaPengirimanDao {
+    public class JasaPengirimanDao {
     private static final String SQL_INSERT = "insert into t_jasaPengiriman (id, kodeJasaPengiriman, namaJasaPengiriman, tipePengiriman, keterangan) "
             + "values (jasaPengiriman_id_seq.nextval,?,?,?,?)";
     private static final String SQL_UPDATE = "update t_jasaPengiriman set "
@@ -32,7 +32,7 @@ public class JasaPengirimanDao {
             + "where id = ?";
     private static final String SQL_DELETE_BY_ID = "delete from t_jasaPengiriman where id = ?";
     private static final String SQL_SELECT_BY_ID = "select * from t_jasaPengiriman where id = ?";
-    private static final String SQL_SELECT_ALL = "select * from t_jasaPengiriman order by kode";
+    private static final String SQL_SELECT_ALL = "select * from t_jasaPengiriman order by kodeJasaPengiriman";
     private static final String SQL_SELECT_GENERATED_ID = "select jasaPengiriman_id_seq.currval from dual";
     
     public void simpan(JasaPengiriman jp){
