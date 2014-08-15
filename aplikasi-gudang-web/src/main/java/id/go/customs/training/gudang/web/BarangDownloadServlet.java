@@ -6,11 +6,26 @@ import id.go.customs.training.gudang.aplikasi.gudang.dao.BarangDao;
 import id.go.customs.training.gudang.aplikasi.gudang.domain.Barang;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRExporter;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
+import net.sf.jasperreports.export.ExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 
 public class BarangDownloadServlet extends HttpServlet {
 
@@ -37,12 +52,12 @@ public class BarangDownloadServlet extends HttpServlet {
         }
         
         if("pdf".equalsIgnoreCase(format.trim())){
-            exportPdf(req, resp);
+            exportPdfXls("pdf", data,req, resp);
             return;
         }
         
         if("xls".equalsIgnoreCase(format.trim())){
-            exportXls(req, resp);
+            exportPdfXls("xls", data,req, resp);
             return;
         }
         
@@ -85,11 +100,31 @@ public class BarangDownloadServlet extends HttpServlet {
         resp.getWriter().flush();
     }
     
-    private void exportPdf(HttpServletRequest req, HttpServletResponse resp) {
-        resp.setContentType("application/pdf");
+    private void exportPdfXls(String format, List<Barang> data, HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        try {
+            // 1. Load dan compile template JRXML
+            JasperReport reportTemplate = JasperCompileManager
+                    .compileReport(req.getServletContext().getRealPath("/WEB-INF/templates/jrxml/barang.jrxml"));
+            
+            // 2. Merge template + data (print)
+            JasperPrint report = JasperFillManager
+                    .fillReport(reportTemplate, 
+                            new HashMap<String, Object>(), new JRBeanCollectionDataSource(data));
+            
+            // 3. Kirim ke client
+            if("pdf".equalsIgnoreCase(format)){
+                resp.setContentType("application/pdf");
+                JasperExportManager.exportReportToPdfStream(report, resp.getOutputStream());
+            } else {
+                resp.setContentType("application/vnd.ms-excel");
+                JRXlsExporter exporter = new JRXlsExporter();
+                exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(resp.getOutputStream()));
+                exporter.exportReport();
+            }
+            
+        } catch (JRException ex) {
+            Logger.getLogger(BarangDownloadServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    private void exportXls(HttpServletRequest req, HttpServletResponse resp) {
-        resp.setContentType("application/vnd.ms-excel");
-    }
 }
