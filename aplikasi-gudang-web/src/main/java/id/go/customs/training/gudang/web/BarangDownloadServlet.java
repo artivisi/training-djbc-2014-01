@@ -1,9 +1,10 @@
 package id.go.customs.training.gudang.web;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import id.go.customs.training.gudang.aplikasi.gudang.dao.BarangDao;
 import id.go.customs.training.gudang.aplikasi.gudang.domain.Barang;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -31,7 +32,7 @@ public class BarangDownloadServlet extends HttpServlet {
         }
         
         if("json".equalsIgnoreCase(format.trim())){
-            exportJson(req, resp);
+            exportJson(data, req, resp);
             return;
         }
         
@@ -76,8 +77,12 @@ public class BarangDownloadServlet extends HttpServlet {
         resp.getWriter().flush();
     }
     
-    private void exportJson(HttpServletRequest req, HttpServletResponse resp) {
+    private void exportJson(List<Barang> data, HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("application/json");
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String output = gson.toJson(data);
+        resp.getWriter().println(output);
+        resp.getWriter().flush();
     }
     
     private void exportPdf(HttpServletRequest req, HttpServletResponse resp) {
